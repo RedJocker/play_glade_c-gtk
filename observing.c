@@ -15,10 +15,8 @@ void add_observer(Subject* subject, Observer* observer) {
   printf("add observer count %d %p\n", subject->observer_count, observer);
   subject->observers[subject->observer_count++] = observer;
   
-  (void) (reallocarray( 
-		       subject->observers, 
-		       subject->observer_count, 
-		       sizeof(Observer*))); 
+  (void) (realloc( subject->observers, 
+		   subject->observer_count * sizeof(Observer*))); 
 
   printf("--after add observer count %d %p %p\n",
 	 subject->observer_count,
