@@ -37,7 +37,7 @@ void button_c_clicked_cb (GtkButton *b, gpointer user_data) {
 
 void on_counter_change (int state) {
   printf("on_counter_change %d/n", state);
-  char* str;
+  char str[100];
   sprintf(str, "%d", state);
   gtk_label_set_text (GTK_LABEL(text_label), (const gchar*) str);
 }
